@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ExternalLink, Mail, ShoppingBag, Headphones } from 'lucide-react';
 import { getPodcastEpisodes } from '@/lib/rss';
 import { getRecentArticles } from '@/lib/mdx';
@@ -7,7 +8,7 @@ import EpisodeCard from '@/components/EpisodeCard';
 import ArticleCard from '@/components/ArticleCard';
 import PodcastPlayer from '@/components/PodcastPlayer';
 
-export const revalidate = 3600; // 1時間ごとに再検証
+export const revalidate = 3600;
 
 export default async function Home() {
   const episodes = await getPodcastEpisodes(3);
@@ -20,8 +21,13 @@ export default async function Home() {
         <div className="container-custom text-center">
           <div className="animate-fadeIn">
             <div className="inline-block mb-6">
-              <div className="w-24 h-24 md:w-32 md:h-32 bg-brand-vermilion rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
-                <span className="text-5xl md:text-6xl">🏮</span>
+              <div className="w-32 h-32 md:w-40 md:h-40 relative mx-auto">
+                <Image
+                  src="/images/logo.png"
+                  alt="東京青春酒場"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
             

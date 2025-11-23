@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';  // 👈 これを追加！
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { navItems } from '@/lib/config';
@@ -15,22 +15,14 @@ export default function Header() {
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
           {/* ロゴ */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 relative rounded-lg overflow-hidden shadow-md group-hover:shadow-lg transition-shadow">
+          <Link href="/" className="group">
+            <div className="w-16 h-16 relative">
               <Image
                 src="/images/logo.png"
                 alt="東京青春酒場"
                 fill
-                className="object-cover"
+                className="object-contain group-hover:scale-110 transition-transform duration-200"
               />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-brand-navy dark:text-brand-ivory">
-                東京青春酒場
-              </h1>
-              <p className="text-xs text-brand-navy/60 dark:text-brand-ivory/60">
-                Podcast
-              </p>
             </div>
           </Link>
 
