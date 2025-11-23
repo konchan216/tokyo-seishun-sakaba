@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Home, ArrowLeft } from 'lucide-react';
 
@@ -30,13 +32,13 @@ export default function NotFound() {
             <Home size={20} />
             トップページへ
           </Link>
-          <button
-            onClick={() => window.history.back()}
+          <Link
+            href="/articles"
             className="btn-outline inline-flex items-center justify-center gap-2"
           >
             <ArrowLeft size={20} />
-            前のページに戻る
-          </button>
+            記事一覧へ
+          </Link>
         </div>
 
         <div className="mt-12 pt-8 border-t border-brand-navy/10 dark:border-brand-ivory/10">
