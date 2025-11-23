@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';  // 👈 これを追加！
 import { Twitter, Instagram, Music } from 'lucide-react';
 import { siteConfig, platformLinks, socialLinks } from '@/lib/config';
 
@@ -12,8 +13,13 @@ export default function Footer() {
           {/* ブランド情報 */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-brand-vermilion rounded-lg flex items-center justify-center">
-                <span className="text-xl">🏮</span>
+              <div className="w-10 h-10 relative rounded-lg overflow-hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="東京青春酒場"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-xl font-bold">{siteConfig.name}</h3>
             </div>
