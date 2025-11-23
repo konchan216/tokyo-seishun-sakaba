@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Shippori+Mincho+B1:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-navy: #0F2540;
+    --color-vermilion: #E4572E;
+    --color-mustard: #C7A009;
+    --color-ivory: #FFF7E5;
+    --color-charcoal: #1B1B1B;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-brand-ivory dark:bg-brand-charcoal text-brand-charcoal dark:text-brand-ivory transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  /* ボタンスタイル */
+  .btn-primary {
+    @apply bg-brand-vermilion hover:bg-brand-vermilion/90 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-mustard hover:bg-brand-mustard/90 text-brand-navy font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply border-2 border-brand-navy dark:border-brand-ivory text-brand-navy dark:text-brand-ivory hover:bg-brand-navy hover:text-brand-ivory dark:hover:bg-brand-ivory dark:hover:text-brand-navy font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+
+  /* カードスタイル */
+  .card {
+    @apply bg-white dark:bg-brand-navy-light rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden;
+  }
+
+  /* リンクスタイル */
+  .link-underline {
+    @apply underline decoration-brand-vermilion decoration-2 underline-offset-4 hover:decoration-brand-mustard transition-colors duration-200;
+  }
+
+  /* コンテナスタイル */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* セクションスタイル */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* タグスタイル */
+  .tag {
+    @apply inline-block bg-brand-mustard/20 dark:bg-brand-mustard/30 text-brand-navy dark:text-brand-ivory px-3 py-1 rounded-full text-sm font-medium;
+  }
+}
+
+@layer utilities {
+  /* アニメーション */
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  /* スクロールバーのスタイリング */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-brand-ivory dark:bg-brand-navy;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-brand-vermilion rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-vermilion/80;
+  }
+}
+
+/* MDXコンテンツのスタイリング */
+.prose {
+  @apply max-w-none text-brand-charcoal dark:text-brand-ivory;
+}
+
+.prose h2 {
+  @apply text-3xl font-bold mt-12 mb-6 text-brand-navy dark:text-brand-ivory;
+}
+
+.prose h3 {
+  @apply text-2xl font-bold mt-8 mb-4 text-brand-navy dark:text-brand-ivory;
+}
+
+.prose p {
+  @apply my-6 leading-relaxed;
+}
+
+.prose a {
+  @apply text-brand-vermilion hover:text-brand-vermilion/80 underline underline-offset-4 transition-colors;
+}
+
+.prose ul, .prose ol {
+  @apply my-6 ml-6 space-y-2;
+}
+
+.prose li {
+  @apply leading-relaxed;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-brand-vermilion pl-6 italic my-6 text-brand-navy/80 dark:text-brand-ivory/80;
+}
+
+.prose code {
+  @apply bg-brand-navy/10 dark:bg-brand-ivory/10 px-2 py-1 rounded text-sm font-mono;
+}
+
+.prose pre {
+  @apply bg-brand-navy dark:bg-brand-charcoal p-4 rounded-lg overflow-x-auto my-6;
+}
+
+.prose pre code {
+  @apply bg-transparent text-brand-ivory p-0;
+}
+
+.prose img {
+  @apply rounded-lg my-8 shadow-lg;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand-vermilion;
+}
