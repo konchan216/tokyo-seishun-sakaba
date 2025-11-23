@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ExternalLink, Mail, ShoppingBag, Headphones } from 'lucide-react';
 import { getPodcastEpisodes } from '@/lib/rss';
 import { getRecentArticles } from '@/lib/mdx';
@@ -7,8 +6,9 @@ import { siteConfig, platformLinks } from '@/lib/config';
 import EpisodeCard from '@/components/EpisodeCard';
 import ArticleCard from '@/components/ArticleCard';
 import PodcastPlayer from '@/components/PodcastPlayer';
+import Image from 'next/image';
 
-export const revalidate = 3600;
+export const revalidate = 3600; // 1時間ごとに再検証
 
 export default async function Home() {
   const episodes = await getPodcastEpisodes(3);
@@ -21,19 +21,16 @@ export default async function Home() {
         <div className="container-custom text-center">
           <div className="animate-fadeIn">
             <div className="inline-block mb-6">
-              <div className="w-32 h-32 md:w-40 md:h-40 relative mx-auto">
+              <div className="w-48 h-48 md:w-64 md:h-64 relative mx-auto">
                 <Image
                   src="/images/logo.png"
                   alt="東京青春酒場"
                   fill
                   className="object-contain"
+                  priority
                 />
               </div>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              東京青春酒場
-            </h1>
             
             <p className="text-xl md:text-2xl text-brand-ivory/90 mb-8 max-w-3xl mx-auto leading-relaxed">
               20代後半〜30代に贈る、お酒と青春のポッドキャスト

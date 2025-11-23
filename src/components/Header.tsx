@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { navItems } from '@/lib/config';
 import ThemeToggle from './ThemeToggle';
+import Image from 'next/image';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* ロゴ */}
           <Link href="/" className="group">
-            <div className="w-16 h-16 relative">
+            <div className="w-24 h-24 relative">
               <Image
                 src="/images/logo.png"
                 alt="東京青春酒場"
