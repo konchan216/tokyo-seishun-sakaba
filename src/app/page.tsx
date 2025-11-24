@@ -20,13 +20,13 @@ export default async function Home() {
       <section className="bg-gradient-to-br from-brand-navy via-brand-navy-light to-brand-navy py-20 md:py-32 text-white">
         <div className="container-custom text-center">
           <div className="animate-fadeIn">
-            <div className="inline-block mb-6">
-              <div className="w-48 h-48 md:w-64 md:h-64 relative mx-auto">
+            <div className="w-full max-w-2xl mx-auto mb-8 px-4">
+              <div className="w-full aspect-square relative">
                 <Image
                   src="/images/logo.png"
                   alt="東京青春酒場"
                   fill
-                  className="object-contain"
+                  className="object-contain drop-shadow-2xl"
                   priority
                 />
               </div>
